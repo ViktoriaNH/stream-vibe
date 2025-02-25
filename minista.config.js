@@ -1,5 +1,5 @@
-import { defineConfig } from "minista";
-import path from 'path';
+import { defineConfig } from "minista"
+import path from "path"
 
 export default defineConfig({
   root: "",
@@ -63,9 +63,9 @@ export default defineConfig({
   },
   resolve: {
     alias: [{
-        find: '@/',
-        replacement: path.resolve('src') + '/'
-    }],
+        find: "@/",
+        replacement: path.resolve("src") + "/",
+      }],
   },
   css: {
     modules: {
@@ -76,7 +76,12 @@ export default defineConfig({
       localsConvention: "camelCaseOnly",
     },
     preprocessorOptions: {
-      scss: {},
+      scss: {
+        additionalData: `
+          @use '@/styles/helpers' as *;
+        `,
+        silenceDeprecations: ['legacy-js-api']
+      },
       less: {},
       stylus: {},
     },
