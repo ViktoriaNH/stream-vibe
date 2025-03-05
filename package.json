@@ -8,10 +8,10 @@
     "preview": "minista preview"
   },
   "prettier": {
-    "semi": false
+    "semi": true
   },
   "devDependencies": {
-    "minista": "^3.1.12",
+    "minista": "^3.1.11",
     "postcss-pxtorem": "^6.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
