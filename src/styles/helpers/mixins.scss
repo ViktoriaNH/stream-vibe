@@ -27,7 +27,7 @@
 
 @mixin abs-cover {
     position: absolute;
-    insert: 0;
+    inset: 0;
 }
 
 @mixin abs-center {
