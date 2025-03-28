@@ -8,6 +8,7 @@ const Button = (props) => {
     type = "button",
     href,
     target,
+    
     mode = "",
     label,
     isLabelHidden = false,
