@@ -1,7 +1,7 @@
-import classNames from "classnames";
-import "./Tabs.scss";
-import getTabsElementsIdsFromTitle from "./utils/getTabsElementsIdsFromTitle";
-import TabsNavigation from "./components/TabsNavigation";
+import './Tabs.scss'
+import classNames from 'classnames'
+import getTabsElementsIdsFromTitle from './utils/getTabsElementsIdsFromTitle'
+import TabsNavigation from './components/TabsNavigation'
 
 const Tabs = (props) => {
   const {
@@ -9,27 +9,30 @@ const Tabs = (props) => {
     title,
     items = [],
     navigationTargetElementId = null,
-  } = props;
+  } = props
 
   return (
     <div
-      className={classNames(className, "tabs")}
-      data-js-tabs={JSON.stringify({ navigationTargetElementId })}
+      className={classNames(className, 'tabs')}
+      data-js-tabs={JSON.stringify({
+        navigationTargetElementId,
+      })}
     >
-      {!navigationTargetElementId && (
-        <TabsNavigation title={title} items={items} />
-      )}
-
+      {!navigationTargetElementId && <TabsNavigation title={title} items={items} />}
       <div className="tabs__body">
         {items.map((item, index) => {
-          const { title, children, isActive } = item;
+          const {
+            title,
+            children,
+            isActive,
+          } = item
 
-          const { buttonId, contentId } = getTabsElementsIdsFromTitle(title);
+          const { buttonId, contentId } = getTabsElementsIdsFromTitle(title)
 
           return (
             <div
-              className={classNames("tabs__content", {
-                "is-active": isActive,
+              className={classNames('tabs__content', {
+                'is-active': isActive,
               })}
               id={contentId}
               aria-labelledby={buttonId}
@@ -39,11 +42,11 @@ const Tabs = (props) => {
             >
               {children}
             </div>
-          );
+          )
         })}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Tabs;
+export default Tabs
